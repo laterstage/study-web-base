@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<!--   组件分为单文件组件（包含n个组件），单文件组件（包含多个组件）-->
+<div id="root">
+
+
+    {{msg}}
+<!--    编写组件标签-->
+   <school></school>
+    <hr>
+    <student></student>
+
+
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+
+    //组件化编写  创建 然后注册
+    const school=Vue.extends({
+        template:`  <div><h2>学生姓名:{{sname}}</h2>
+                    <h2>学生年龄:{{address}}</h2>     </div>`,
+        //不能写el 组件定义时候 这里面一定要写成函数形式
+        data(){
+           return {
+               sname: '喜顺大学',
+               address: '长春'
+           }
+        }
+
+    });
+
+    //组件化编写
+    const student=Vue.extends({
+        data(){
+            return {
+                name:"张三",
+                age:'23'
+            }
+        }
+        template:`  <div>
+                          <h2>学生姓名:{{name}}</h2>
+                          <h2>学生年龄:{{age}}</h2>
+                    </div>`,
+        //不能写el 组件定义时候 这里面一定要写成函数形式
+
+
+    });
+
+    new Vue({
+        el:'#root',//此处方组建
+        data:{
+            mes:'测试'
+        }
+        ,
+        components:{
+            school:school,
+            student:student
+
+        }
+
+
+
+
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+
+<div id="example">
+
+    <ul>
+        <!-- v-for 实现遍历    数组有几个数据则声成 几个li数据   key 让每一个li都有一个唯一标识 也可以使用 p,index
+         确定唯一标识   <li v-for="(p.index) in persons" :key="p.index">  不使用则报错  in 可以用 of 代替-->
+        <li v-for="p in persons" :key="p.id">
+            {{p.id}}-{{p.name}}
+
+
+        </li>
+
+<!--        遍历对象 -->
+        <li v-for="(a,b) in persons">
+           a代表的  健  b代表值
+
+
+        </li>
+<!--        遍历字符串-->
+        <li v-for="(a,b) in persons" :key="p.id">
+            字符床 和下表
+
+
+        </li>
+
+        <li v-for="(a,b) of 5">
+            遍历次数  一个从1-5
+            一个从  0-4
+
+
+        </li>
+    </ul>
+
+</div>
+
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        //条件渲染
+        data: {
+            persons:[
+                {id:1,name:'张三'},
+                 {id:2,name:'李四'}
+            ]
+        },
+        methods:{
+
+
+        }
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

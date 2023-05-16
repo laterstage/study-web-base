@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+        跟data平级 挂在的意思 vue完成模板的解析，并把真实DOM的调用 只调用一次
+        beforeCreate(){
+        //不能访问data 中数据和methods中的方法
+        debugger；表示代码停止
+        }
+
+        create(){
+                //完成数据检查
+                //可以访问到 data 和methods的方法
+        }
+
+        beforeMounted(){
+               // 解析完事还没有向页面进行放 所有对DOM 最终操作都不奏效的
+        }
+        mounted(){
+                对dom操作有效但尽可能的避免
+                一般在此  发送网络请求 等
+        }
+        template:{}是魔板的意思 拿着他当魔板 不能有两个元素 替换原来的东西
+        beforeUpdate(){
+        数据更新之前 数据更新但页面还是旧的
+
+        }
+        Updated(){
+
+
+        }
+        vm.$destroy 调用这个函数则摧毁 销毁自定义事件
+
+        beforeDestroy(){
+        销毁之前 能调用界面，但是界面不更新
+
+        }
+
+        Destroy(){
+        销毁之前
+
+        }
+        组件
+
+
+
+
+
+-->
+</body>
+</html>

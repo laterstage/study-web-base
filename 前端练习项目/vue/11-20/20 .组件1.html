@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <runoob></runoob>
+</div>
+
+<script>
+    const Child = {
+        name:"dfs",//制定在开发组件的名字
+        template: `
+            <div>
+            <h1>{{name}}</h1>\
+            </div>`
+        ,
+        data(){
+            return{
+                name:'good'
+            }
+        }
+
+
+    }
+
+    // 创建根实例
+    new Vue({
+        el: '#app',
+        components: {
+            // <runoob> 将只在父模板可用
+            runoob: Child
+            //命名规范小写，或者首字母大写 my-name 不同单词 短横间隔 或者每个单词首字母大写，需要用工具才能写 Vue脚手架才能使用
+            //components 在组件中使用components 就是套娃中套娃 注册给谁就在谁的结构 之内写
+        }
+    })
+    Vue.component('hell',runoob);//数据全局注册
+</script>
+</body>
+</html>

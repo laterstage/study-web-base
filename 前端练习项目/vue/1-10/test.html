@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_HelloWorld</title>
+</head>
+<body>
+
+<!--
+  1. 引入Vue.js
+  2. 创建Vue对象
+    el : 指定根element(选择器)
+    data : 初始化数据(页面可以访问)
+  3. 双向数据绑定 : v-model
+  4. 显示数据 : {{xxx}}
+  5. 理解vue的mvvm实现
+-->
+
+<!--模板-->
+<div id="root">
+    {{msg}}
+</div>
+
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    Vue.config.productionTip=false;
+    const vm = new Vue({ // 配置对象 options
+        // 配置选项(option)
+        //当使用类的时候 有两个则使用其中一个  相同名字的类  容器和vue是一对一的关系
+        //花括号添加js表达式 一个表达式生成一个值，放在任何需要表达式的值
+        /***
+         * 不能将值放大 html标签的属性里面
+         * <a v_bind:href="urel"="url"> 是绑定的意思  v_bind 简写 : 用于标签属性
+         * 可以在对象里面添加对象 ，然后进行调用 例如 对象.对象
+         * **/
+
+        el: '#root',  // element: 指定用vue来管理页面中的哪个标签区域
+        data: {
+            msg: '真是个好动习'
+        }
+    })
+</script>
+</body>
+</html>

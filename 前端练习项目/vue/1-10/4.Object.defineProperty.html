@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        Object.defineProperty("对象名字","要添加对象的属性"，{
+            value:15//添加对象的数值
+            //以当前方式添加，则不参与便利、
+            enumerable:true,//添加的东西是否参与便利 当前方式默认不能更改
+            writable:true,//设置之后则可以进行更改  不允许被删除
+            configurable:true,//控制项目是否允许被删除
+
+            //当获取的时候则显示 返回内容是什么则变化就是什么
+            get:function (){
+                return "fsf";
+            }
+            //获取到一个更改的数值
+            set(value){
+
+            }
+        })
+
+        vm.name=vm_data.name
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

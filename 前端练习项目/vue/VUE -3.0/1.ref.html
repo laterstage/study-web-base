@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--是将普通变量 变成响应式布局
+let age=ref(18)
+转换成引用实现对象 转换成引用对象
+age.value='新数值'
+{age}
+let job=ref({
+    type:'前段'
+    salart:'30k'
+
+})
+jop.value.type="fds"
+
+rective定义一个对象的相应数据处理对象类型
+let obj=reactive({})
+直接输出job.type='100'
+
+let b=reactive([a,a,c])
+b[0]='新数值'通过数值进行修改
+
+this.$delete删除一个属性
+
+vue3的响应式原来
+在vue3需要配置 configurable:true才可以 删除
+delete a.name
+
+reflect 错误则不执行
+
+props不声明接收则 产生在attrs
+
+如果插件没挖坑则产生在slot里面对象
+
+setup执行时机，比之前执行都要早 beforeCreate 在这个还早
+vue3父组件给子组件绑定事件，子组件也要对应的声明 emits:['hello']
+可在组件传东西 ， v-slot:qwe
+
+Vu3的计算属性
+import {computed} from 'vue'
+在vue3使用计算属性必须引入
+let fullname=computed(()=>{})
+上面是正确使用计算属性  还需要在返回值进行返回
+persong.fullname意思是向person里面添加一个属性
+简写只能读
+完整版只能读写
+person.fullname=computed({
+
+    get(){}
+    set(){}
+
+
+})
+
+vu3的数据监视
+sum(new,old){}
+上面是第一种写法
+第二种写法
+sum:{
+    imediate:true
+    deep:true
+    handler（new,old）{}
+}
+需要引入watch 情况1监视一个数据
+watch(sum,(new,old)=>{
+    数据变化
+})
+情况2监视多个数据
+在vue3可以写多个函数
+watch([a,b],(new,old)=>{},{监视的配置imediate:true})
+
+情况三:监视reactive所定义的一个响应式数据，注意此处无法争取监视old数据
+用ref使用 数值.value 只要用reactive定义数据 默认开启深度监视 强制开启，深度监视数据
+
+情况四：我想监视某一个数据 person.age
+watch(()=>person.name,(new,old)=>{},{监视的配置imediate:true})
+
+情况5，想监视数据的某些
+watch([()=>person.name,()=>person.name,],(new,old)=>{},{监视的配置imediate:true})
+特殊情况 相监视某个项目对象需要开启deep
+
+用ref监视里面的对象 则用.value进行监视 或者开启深度监视
+
+watchEffect监视函数
+表示全部监视 在函数里面用到谁的值则监视谁
+watchEffect(()=>{})
+
+vue3生命周期
+beforeUnmont 与卸载对应
+写在setUP里面需要用其他代替
+
+unmonted
+
+
+自定义hook函数
+onMounted(()=>{
+    windows.addEventLISTENER('click',(event)=>{
+
+
+
+    })
+
+})
+
+建立一个hook函数
+是将数据进行疯转
+
+toref
+const name2=toRef(person,'name')将persong对象里面的name转换成 对象ref并 对外暴露name2可以得到响应式
+
+shallowReactive 与shallowRef
+只是修改浅层，数据
+shallowRef 不去处理对象数据
+shallowReactive 只处理外层数据
+
+readonly 与shallowReadonly
+readonly(数据）是数据不允许更改
+shallowReadonly 只考虑一层数据更改，不考虑深层的考虑
+
+roRaw与markRaw
+将转成原始对象，标志原始面具
+
+ customRef  是自定义ref
+
+ provide 与inject
+ 适合试用于祖孙组件通信
+  provide('car',car)//给孙子组件提供数据
+  inject （‘car’）在孙子组件获取爷爷的数据
+
+  对相应数据进行判断
+  isRef数据是不是一个ref
+  isReactive检查对象是不是一个相应reactive响应式代理
+  isReadonly 检查一个对象是否由readonly创建只读代理
+  isProxy检查对象是否由reactive 或者readonly方法创建代理
+
+  Fragment片段
+
+  teleport瞬间移动  实现弹窗
+  <teleport>
+    <h1></h1>
+  </teleport>
+
+  Suspense等待异步组件渲染一些额外的内容
+  <Suspense>
+    <template v-slot:default>
+        <child></child>
+    </template>
+    一个是假的的插槽 ，就是页面没有加载出来展示的，
+
+        <template v-slot:fallback>
+        <child></child>
+    </template>
+
+</Suspense>
+
+-->
+</body>
+</html>

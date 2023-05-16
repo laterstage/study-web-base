@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--在vm原型上面绑定傀儡负责通信
+
+const Demo=Vue.extend({})
+const d=new Demo();
+Vue.prototype.x=d
+
+第二种更优秀选择
+beforeCreate(){
+Vue.prototype.$bus=this//安装全局总线
+
+}
+beforeDestroy(){
+//在销毁之前要将数据解绑
+Vue.prototype.$bus.off("名字")//安装全局总线
+
+实现的第二种方式
+需要数据订阅消息，提供数据发布消息
+第三方库  pubsub.js 可以实现此内容 支持在任何框架 npm i pubsub-js 实现安装
+引入第三方库 import pubsub from 'pubsub-js'
+ 在事件周期mounted(){
+this.puiD=pubsub.subscribe（‘订阅名’，function(a,b){
+ a是消息，b是数据
+ messagenName data
+        执行消息回调
+ }）
+ //使用箭头函数
+ this.puiD=pubsub.subscribe（‘订阅名’，(a,b)=>{
+ a是消息，b是数据
+ messagenName data
+        执行消息回调
+ }）
+ }
+ beforeDestroy(){
+ pubsub.unsubscribe(this.puiD)
+ 在这里取消订阅
+
+ }
+
+
+}
+//是等着所有代码执行完再执行
+this.$nextTick(function(){
+this.$refs.inputTitle.focus获取焦点
+
+})
+
+-->
+
+</body>
+</html>

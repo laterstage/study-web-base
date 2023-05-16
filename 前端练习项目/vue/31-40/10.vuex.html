@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- vuex-->
+
+<!--
+是组件与组件的通信
+    引入模块则可以使用store商品
+    如果没有引用store则没有store
+    创建一个文件store()文件
+    建立一个index.js
+    const action={
+    dispatch
+    }
+    const mutations={
+    commit
+    }
+    const state={
+    state
+    意思是personAbout.a
+    this.$store.store.comit('personAbout/a')
+
+    }
+    //实现更复杂的复用 用于将state数据配置一次
+    const getters={
+    bigsum(state){
+        return sum*10;
+    }
+    }
+    const store=new VueX.Store()
+    const store=new Vuex.Store({
+        actions:actions:
+        mutations:mutations,
+        state:state
+        //可以简写成
+        actions
+        mutations，
+        state，
+
+
+
+    })
+    export default store;暴露store
+    业务逻辑必须全部写到action里面
+
+
+
+
+接下来引入mypState
+import {mypState } from vuex
+...myapState(HE:"SUM") 对象写法
+简写方式...mypState(['sum','school'])数据写法
+简写方式...mypState('上一层',['sum','school'])数据写法
+mypGetters写法同上
+...mapMutations({sum:'jia'})//在调用的时候需要传参生成对应的方法
+mapAction写法同上
+
+
+vuex的模块化写法
+const aa={
+//需要使用navaspaced:true //才可以使用
+简写方式...mypState('上一层',['sum','school'])数据写法
+下面写法同上
+action{}
+
+}
+export default new Vuex.Store({
+        modules:{
+        aa,
+        }
+
+
+})
+return this.$store.getters['personAbout/forstPersonName']
+-->
+路由
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 引用路由  import VueRouter from  vue-route
+
+new Vue({
+
+router:'hellow’
+在src目录建立一个router
+const router=new VueRouter({
+        routes:[{
+        name="guanyu"
+            path:'/about', 在上面引入一个组件是about
+            component:about 组件
+
+            //如果配置多层路由则使用下面这个属性
+            children:[{//子路由不需要加反斜杠
+                path:'news',
+                component:news
+                //props的第一种写法  改对象的所有key-value都会以props形式传给news
+                props:{a:1,b:'hell0'}
+                需要在news组件当中写
+                props:['a','b']
+                第二种写法 值布偶值为真，则把该路由组件收到的所有params参数以props形式传参
+                props；true
+                接受需要写props:['id','title']
+                第三种写法值为函数
+                props($route){
+                return {id:$route.id,title:'你好啊'}
+                }
+                 props({query}){
+                return {id:query.id,title:'你好啊'}
+                }
+                  props({query:{id,}}){
+                return {id:id,title:'你好啊'}
+                }
+            }]
+
+        }]
+
+
+})
+exprot default router
+
+在外部必须使用的一个标签
+<router-link to="/about" active-class="actove"> 最终结果转换成A标签</>router-link>
+<router-link to="/about/childen" active-class="actove"> 最终结果转换成A标签</>router-link>
+上面子路由必须写孩子路径
+active-class 表示谁点击谁变亮
+
+显示的位置就用标签 <router-view> </>router-view>\
+pages文件通常放路由组件
+components 通常放一般组件 切走的路由组件被销户了
+
+嵌套路由
+
+})
+
+
+路由传参
+可以通过当这种方法向路由传参
+<router-link to="/about/childen?id=100&iddd=500" active-class="actove">  只能当字符串
+m是相当于遍历里面的i
+<router-link :to="/about/childen?id=${m.id}&iddd=${m.iddd}" active-class="actove"> 后面当js代码用
+第三种写法 to的对象写法query:是一种参数
+<router-link :to={path:'/about/childen' ,query:{id=m.id}  }>
+{{m.title}}}
+</>router-link >
+接收的时候可以使用 router
+{{$route.query.id}}}
+
+
+命名路由
+需要在路由里面写name="guanyu" :to"{name:'guanyu}"
+
+params:参数
+<router-link :to="/about/childen/666/你好啊" active-class="actove">
+需要在路由配置里面写 path:'childrn/:id/:title
+调用的时候使用 $params.id  其他对用也要换成params 必须用name属性不能用path
+
+始终只有一条浏览记录
+<router-link :replace=true //replace或者直接写  :to={path:'/about/childen' ,query:{id=m.id}  }>
+
+编程路由导航
+调用方法
+pushShow(m){
+    this.$router.push({
+        name:'xxx'
+        query:{
+            id:m.id
+        }
+
+
+    })
+
+
+}
+this.$router.forward 是浏览记录前进
+this.$router.back 是后退
+              .go(-2)-2是向后 2 是向前2部
+
+缓存路由组件
+防止组件被销户，里面数据没有，需要使用第三方标签
+<keep-alive include="路由组件"> 如果不写则缓存所有
+    <router-view>  </router-view>
+ </>keep-alive>
+ 如果缓存多个则 include="['a','b']"
+
+             -->生命周期2
+</body>
+</html>

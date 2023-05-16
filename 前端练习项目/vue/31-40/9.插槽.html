@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<zujian>
+    <标签体> </标签体>
+
+
+</zujian>
+<!--默认插槽-->
+<!--在另一个的组件内部需要定义一个  <slot>没有定义的时候出现的</slot>标签指定位置>-->
+<!--多名插槽-->‘
+<slot name="a"></slot>
+<外层标签 slot="a"></外层标签>
+
+<!--可以使用tmeplate标签 进行包裹   -->
+<template v-slot:名字>可以使用下面结构
+
+
+</template>
+
+<!--作用域插槽-->
+<!--必须使用template  然后在->
+<slot :games="games">这个可以逆向传数据 </slot>
+<template scope=“传过来的对象”>可以使用下面结构
+传过来的对象.games
+这里面可以用到 games对象
+</template>
+新版本的写法 slot-scope={games}
+</body>
+</html>

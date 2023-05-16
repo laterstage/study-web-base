@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+
+
+<div id="example">
+
+    <!--    对类进行操作的三种方式-->
+    <h2>今天天气很不错{{isHot ? '炎热':'寒冷'}}</h2>
+    <button class="a" :class="雷鸣" @click="changeMood">切换天气</button>
+
+    <button class="a" :class="classArr" @click="changeMood">切换天气</button>
+
+    <button class="a" :class="classObj" @click="changeMood">切换天气</button>
+<!--   内联样式的用VUE的写法-->
+    <div class="basic" :style="fontsize:fsize+'px'"></div>
+
+    <div class="basic" :style="styleObj"></div>
+
+
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        //条件渲染
+        data: {
+            fsize:40,
+            isHot:true
+            numbers:{
+                a:1,
+                b:2
+                classArr:[a,b,c],
+                classObj:[
+                    a=true,
+                    b=true
+                ]
+            },
+            methods:{
+                changeMood(){
+
+                },
+                styleObj(){
+                    fontSize:'40px'//同样是有效的
+                }
+
+        }
+        }});
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+//激活 只是属于路由组件
+nextTick
+activated(){}
+//失活
+deactuvated(){}
+
+路由守卫
+需要在路由里边吗设置
+const router=new VueRouter(
+    里面有个属性叫做佩奇 属性
+    meta:{peiqi:false}通过此参数判断 是否需要前卫守护
+    localStorage.getItem('school')
+
+    isauth
+
+
+)
+//是在没此路由调用之前那
+router.beforeEcah((to,from,next)=>{
+
+全局路由调用，初始化被调用
+next();
+
+})
+还有后置守卫
+router.afterEcah((to,from)=>{
+
+全局路由调用，初始化被调用
+next();
+
+})
+
+
+独享路由守卫
+
+在单个路由
+{
+    path:
+    name
+    component:
+    //独享enter
+    beforeEnter
+    同全局一样
+    只有前置没有后置
+
+}
+
+组件守卫
+通入该规则，离开该组件调用
+beforeRouteEnter 来的时候嗲用
+beforeRouteLeace 离开组件调用
+通过调用 进入调什么，离开调什么
+
+mode:'history'  兼容略差
+路由默认采用的的是hash 兼容性好
+
+npm run build打包项目
+node指定静态资源
+app.use(express.static(__dirname+'/static'))
+
+UI的组件库
+element-ui的使用
+-->
+</body>
+</html>

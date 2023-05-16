@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+
+<div id="example">
+
+    <h2>今天天气很不错{{isHot ? '炎热':'寒冷'}}</h2>
+    <button>切换天气</button>
+
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        data: {
+
+            isHot:true
+
+        },//在下面可以配置回调  尽量不要使用箭头函数
+        watch:{
+            immediate:false,//代表是否立即执行 初始化化让handle调用一下
+            isHot:{
+                handle(newValue,oldValue){
+                        //可以显示修改之前的值，和修改之后的值
+						
+                     }
+
+            }
+
+        }
+    });
+    //下面方式同样可以实现监视
+    vm.$watch('isHost',{
+        handle(newValue,oldValue){
+            //可以显示修改之前的值，和修改之后的值
+			alert(newValue)
+        }
+    })
+</script>
+</body>
+</html>

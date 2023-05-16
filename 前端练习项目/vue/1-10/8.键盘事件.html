@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+
+<div id="example">
+    <!--    //v-on:click="showInfo" 为按钮绑定一个事件 执行showInfo函数-->
+
+    <a href="www.baidu.com" @click="showInfo">跳转百度</a>
+    <a href="www.baidu.com" @click.prevent="showInfo">跳转百度</a>
+
+    <div @click.stop="showInfo">
+
+        <a href="www.baidu.com" @click.stop="showInfo">跳转百度</a>
+        <!--            第二种方法实现事件冒泡    -->
+    </div>
+
+    <!--    事件只除非一次-->
+    <button @click.once="showInfo">跳转百度</button>
+    <!--    第二种方式实现阻止默认事件
+    捕获阶段，是从外向内的
+    触发阶段是由内向外的
+    capture 在事件捕获阶段，就触发事件
+    self 只有event.target是当前元素才触发的事件  经常放到父亲身上
+    passive 事件默认立即执行，无需等待事件回调完成  就是需要执行调用完成后的函数
+    -->
+
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        data: {
+
+        },//在下面可以配置回调  尽量不要使用箭头函数
+        methods:{
+            showInfo(e){
+                //同时还可以获取事件的内容
+                e.preventDefault();//阻止默认行为  标签不跳转
+                //阻止事件冒泡
+                e.stopPropagation()
+                alert(event.target.innerText)
+            }
+        }
+    })
+</script>
+</body>
+</html>

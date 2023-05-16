@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<div id="root">
+
+    单项绑定数据:<input type="text" v-bind:value="name">
+    双向绑定数据:<input type="text" v-model:value="name" >
+    <!--        v-model 一般应用输入 的表单  可以从数据流向，表单 ，表单留向模型
+    v-model:value="name" 简写 v-model="name" 是一个双向控制的
+
+    -->
+</div>
+
+</body>
+<script type="text/javascript" src="../vue.js"></script>
+<script type="text/javascript">
+    Vue.config.productionTip=false;
+
+    // const vm = new Vue({
+    //     //el:'#root',
+    //     data:{
+    //         name:'真是个好东西'
+    //     }
+    // })
+    // vm.$mount('#root');//第二种写法更灵活
+
+    //data的两种写法 到后面的时候data 必须使用函数式 不要写成箭头函数
+    const vm = new Vue({
+        //el:'#root',
+        data:function (){
+            return{
+                name:'伤害过'
+            }
+        }
+    })
+    vm.$mount('#root');//第二种写法更灵活
+</script>
+</html>

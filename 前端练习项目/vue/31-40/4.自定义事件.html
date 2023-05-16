@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--是表示组件的自定义事件-->
+<student v-on:zhangxishun="dome"></student>
+<!--给组件绑定一个 自定义事件名字叫zhangxishun 如果触发这个事件则执行dome函数
+this,$emit('触发实际名称 zhangxishun')
+
+第二种写法
+<Student ref="student" />
+解绑自定义事件
+this.$off('触发实际名称 zhangxishun')解绑
+如果同时解绑两个事件
+this.$off([第一个时间名，第二个时间名])
+this.$off() 所有的自定义事件解绑
+
+销毁后 当前Student组件实例，销毁后所有Studeng实例的自定义事件全部不奏效
+
+在组件里面调用的事件 都是自定义事件 如需要调用原生事件则需要 @click.native=""
+可以实现跨越
+-->
+</body>
+</html>

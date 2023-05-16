@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--定义组件的时候 return 里面不要返回任何东西，参数要在 标签传入-->
+<!--<student name="李四" sex="女" age="18" :age="18"></student> 第二种可以传入数字类型-->
+<!--
+写完之后还需要另一边的调用
+props:['name','age','sex']
+简单接受另一种写法  用来限制数据类型
+props:{
+name:String,
+age:number,
+sex:string
+}
+//更高级的写法
+pops:{
+    name:{
+        type:String,
+        required:true//名字是必须传的
+    }
+    ，
+     age:{
+        type:number,
+        default:99//设置一个默认值
+        外部传进来的不需要该 如果需要更改的时候，将数组初始化data里面的参数，然后，更改data里面的参数
+    }
+    如果有公用的方法，则可以写入到一个公共的js厘米，然后采用分别暴露，然后 引入
+   下面是引入一个混合
+    import {a} from './minx.js'
+
+    需要配置一个配置项
+    mixins:[a]
+
+还可以采用全局混合
+main.js 进行引入
+然后调用Vue.mixin(hunhe2) 这样在所有的地方都能调用此方法
+
+
+定义插件：在src 目录下，建立一个 plugins.js 文件当做插件
+
+第一步使用插件
+引用插件
+import plugins from './plugins' 引入
+应用插件
+Vue.use(plugins)
+<style scoped lang="less" > 增加约束作用域 在app里面不用这个样式
+//可以设置多种style样式编写语言
+</style>
+
+}
+
+
+
+-->
+</body>
+</html>

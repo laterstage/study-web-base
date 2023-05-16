@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--解决跨域 cors
+jsonp 使用src访问不收跨域影响
+3代理服务器 vue-cli开代理服务器 8080
+找官方文档 devServer.proxy 只能配置一个代理 ，更改 Vue配置文件
+proxy:"地址"
+4.方式二
+proxy:{
+    ‘/abc’:{ //是在端口后面的
+        target:'地址'.
+        //防止带牵住发送到服务器
+        pathRewrite:{
+            '^/abc':''
+        }
+        ws:ture,用于支持webstock
+        changeOrigin:fals,//显示true 说谎，就是和客户端同端口，为false说谎自己本身8080
+
+    }
+
+}
+引入第三方文件夹的方式  是在public 文件夹下 建立css文件夹
+-->
+</body>
+</html>

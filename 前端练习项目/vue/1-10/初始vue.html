@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <script type="text/css">
+        /*将错误提示信息关闭*/
+        Vue.config.productionTip=false;
+
+        const vm = new Vue({ // 配置对象 options
+        // 配置选项(option)
+        el: '#test',  // element: 指定用vue来管理页面中的哪个标签区域
+                         data: {
+                             msg: 'atguigu'
+                         }
+        })
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="root">
+        <h1>Hellow,{{name}}</h1>
+        {{name}}
+    </div>
+
+</body>
+
+</html>

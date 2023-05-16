@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+
+<div id="example">
+
+    <input type="text" placeholder="请输入名字" v-model="keyWord">
+    <ul>
+        <li v-for="p in filpersons" :key="p.id">/
+<!--            使用监视属性执行的时候 filpersons 是数组 使用计算属性，是函数-->
+            {{p.id}}-{{p.name}}
+
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#example',
+        //条件渲染
+        data: {
+            keyWord:'',
+            persons:[
+                {id:1,name:'张三'},
+                {id:2,name:'李四'}
+            ],
+
+
+        },
+        methods:{
+            //计算方式实现
+
+
+        },
+        computed:{
+            filpersons(){
+                return  this.persons.filter((p)=>{
+                           return p.name.indexOf(this.keyWord)!==-1
+                            })
+            }
+
+        }
+        // watch:{
+                //监视实现
+        //     immediate:true,
+        //     keyWord:{
+        //         handler(val){
+        //
+        //             this.filpersons=this.persons.filter((p)=>{
+        //                 return p.name.indexOf(val)!==-1
+        //         })
+        //     }
+        //
+        //
+        //
+        //     }
+        // }
+
+    });
+
+Vue.set(对象，键，值);实现向vue 追加响应式布局的属性 vm.stuend===vm._data_student
+vm.$set(对象，键，值);与上面的功能具有同样的功能
+    Vm对象对一个必须是提前有的东西
+
+    //多选框 new对象的值对应一个数组 v-model.number 是转换成数字类型   type =number 要同时使用
+    //v-modle.lazy 表示延迟 失去焦点一瞬间进行提取 v-model.trim表示 去掉开头的空格
+    //{{time | 过滤器名字 }} 想获取谁就是直接获取就OK
+    //{{time | 过滤器名字(第二个参数原来参数不丢失) | 第二个过滤器 }} 过滤器一直是前一个的返回值 在一个实例写完，则属于局部
+
+    filters:{
+        过滤器名字(value,str=”无值则使用默认值“){  //系统自动会将time值 传入过滤器
+
+        }
+    }
+    /**
+     * 全局过滤器如何配置
+     * Vue.filter(’过滤器名字‘，function(value){})  差值语法和v-model
+     *
+     * */
+
+
+
+
+
+
+</script>
+</body>
+</html>

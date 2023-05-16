@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]:{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+生命周期
+
+<!--    v-text ="name" 实现向数据进行插入 v-text拿到东西直接替换原来div 当中所有的内容  是不认 字符串中有html的东西的
+        v-html 是支持结构的解析
+        v-cloak  <h2 v-cloak>  可以用CSS控制    配合使用 当网速过慢 可以将展示差值 语法不显示在界面上
+        v-once 所在节点的初次动态渲染后视为静态内容 以后并不会引起v-once所在结构的更新 只读一次
+        v-pre  可以让VUE跳过 编辑样式  不进行页面的解析 可以使用没有指令语法，没有使用差值语法的节点
+
+         <style>
+        [v-cloak]:{
+            display: none;
+        }
+
+    </style>
+
+    //自定义语法编写
+    directives:{
+        big:{
+        //下面的名字不能改变 在不同阶段调用
+              //与元素成功绑定调用
+              bind(a,b){}
+              //指令元素被插入页面时
+              inserted(a,b){}
+              //制定魔板被重新更新的时候
+              update(a,b){}
+        }
+        big:function(){
+
+        }
+        big(a,b){
+            a 是真实dom
+            b 是对象    使用的时候v-big
+            直接通过操作真实dom不需要返回值
+            指令 和元素直接建立则进行绑定 指令所在魔板重新解析时候 才会调用
+            如果多个单词 v-big-number  则定义的时候 'big-number'
+            //指令相关的this 是 windows
+            以上定义属于局部指令
+            //vue.directive('名字',{}) 一下属于全局
+              //vue.directive('名字',function(){}) 一下属于全局
+        }
+    }
+
+-->
+</body>
+</html>

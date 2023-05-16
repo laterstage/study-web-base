@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_事件处理</title>
+</head>
+<body>
+<!--
+1. 绑定监听:
+  v-on:xxx="fun"
+  @xxx="fun"
+  @xxx="fun(参数)"
+  默认事件形参: event
+  隐含属性对象: $event
+2. 事件修饰符:
+  .prevent : 阻止事件的默认行为 event.preventDefault()
+  .stop : 停止事件冒泡 event.stopPropagation()
+3. 按键修饰符
+  .keycode : 操作的是某个keycode值的健
+  .enter : 操作的是enter键
+-->
+
+<div id="example">
+<!--    //v-on:click="showInfo" 为按钮绑定一个事件 执行showInfo函数-->
+        <button v-on:click="showInfo">点我提示信息</button>
+		<button v-on:click="fullName">点我提示信息</button>
+        <button @click="showInfo(66,$event)">我是简写</button>
+<!--    这样可以帮event事件进行占位置-->
+
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+
+
+    Vue.config.keyCodes.zidingyi=13;  //定义一个字符使用更改名字
+    new Vue({
+        el: '#example',
+        data: {
+            name:'111'
+
+        },//在下面可以配置回调  尽量不要使用箭头函数
+        methods:{
+
+            showInfo(v,event){
+                //同时还可以获取事件的内容  a.b.c 修饰符可以联合使用
+               alert(event.target.innerWidth)
+			   alert(v)
+            }
+        }
+        ,//计算属性
+        computed:{
+            fullName:{
+                //当有人读取fullName get就会被调用 且返回值值 做为fullName  在此实现字符串
+                //get什么时候调用 初次调用的时候 当数据改变进行重新调用
+                get(){
+                    return this.name
+                }
+
+
+            },//,
+            //d当确定只读不写的完整写法
+            fullNmae1() (//写他的时候不能加 小括号
+                      return this.name
+            )
+        }
+
+    })
+    //在{{调用函数的时候 函数要()}}
+    /**
+     * 计算属性
+     * */
+</script>
+</body>
+</html>
