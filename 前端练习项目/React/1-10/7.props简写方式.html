@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body lang="en">
+
+<div id="test">
+    <!--        引入js是需要顺序的-->
+
+
+</div>
+<!--    先引入核心库-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+
+<!--    引入react-dom 用于支持react 操作dom-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    引入babel 用于将jsx转换成js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!--用于对标签属性进行限制-->
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/babel">
+
+    //写函数组件化首字母需要大写 函数式组件
+    class Demo extends React.component{
+
+
+
+        render(){
+            const {name,age}=this.props
+            return(
+            {this.props.name}
+            //两种方式
+            {name}
+            }
+
+    )
+        //等价下面添加的一样
+        static propTypes={
+            //用他来做类型的限制
+            name:React.propTypes.string.isRequired//15版本采用
+            //16版本进行限用 isRequired代表的是必须传的
+            age:18
+            //不传默认参数的 为18
+            //func 限制为函数
+
+
+        }
+
+
+    }
+    Demo.propTypes={
+        //用他来做类型的限制
+        name:React.propTypes.string.isRequired//15版本采用
+        //16版本进行限用 isRequired代表的是必须传的
+        age:18
+        //不传默认参数的 为18
+        //func 限制为函数
+
+
+    }
+
+
+    //在下面进行传值
+    ReactDOM.render(<Demo name="tom"  age="18" />,VDOM,document.getElementById('test'))
+    //如果多个数据显示
+    // const  stu1=new Demo('tom',18)//
+    //使用...对象/数组方式展开 {...对象}则可以展开
+    const a={年龄:28}//等一堆数据
+    ReactDOM.render(<Demo name="tom" {...a}  age="18" />,VDOM,document.getElementById('test'))
+    function demo(){}
+
+
+
+
+    /*
+    * 向对象里面添加 state到数据
+    *
+    * 状态不能直接更改 ，页面不会发生改变
+    * this.setState({isHot:!ishot}) 与原来的对象进行的是合并
+    *
+    *
+    * */
+
+</script>
+</body>
+</html>

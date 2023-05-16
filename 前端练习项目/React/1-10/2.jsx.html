@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</head>
+<body>
+
+    <div id="test">
+<!--        引入js是需要顺序的-->
+
+
+    </div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        const myid='abcabc'
+        const VDOM=(<h1 className="bac" id="abc"><span>{myid}</span></h1>)//样式的类名不能用classname
+        //如果写内联样式的话 style={{color:'white'}}
+        //不能出现多个根标签
+        //标签若是小写则转换成html同名元素，如果大写则显示组件
+        ReactDOM.render(VDOM,document.getElementById('test'))
+    //    js使用表达式 {} 遍历还需要 要有一个唯一的key
+        {data.map(item,index)=>{
+            return <li key={{index}>{item}}</li>
+
+        }}
+
+    </script>
+</body>
+</html>

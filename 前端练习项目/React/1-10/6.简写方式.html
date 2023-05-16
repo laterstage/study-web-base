@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body lang="en">
+
+<div id="test">
+    <!--        引入js是需要顺序的-->
+
+
+</div>
+<!--    先引入核心库-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+
+<!--    引入react-dom 用于支持react 操作dom-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    引入babel 用于将jsx转换成js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!--此处一定要写babel-->
+<script type="text/babel">
+
+    //写函数组件化首字母需要大写 函数式组件
+    class Demo extends React.component{
+        //此处this是undefind 开启严格模式
+        //return '<h2>我是函数</h2>'
+        constructor(p) {
+
+            super(p);
+           this.demo11= this.demo1.bind(this)//将demo1绑定到this里面 是返回一个新的函数 然后调用新的函数
+        }
+        render(){
+
+            //此处不能用demo（）这种方式
+            return <h2 onClick={this.demo11}> 类定义</h2>
+
+        }
+        //在类里面直接追加属性a
+        a=1//无需定义
+
+        //将方法写在类里面
+        //使用自定义方式 家箭头函数
+            eme=()=>{
+            //类中默认开启严格模式 所以他是undefind
+        }
+    }
+    //渲染组健
+    ReactDOM.render(<Demo/>,VDOM,document.getElementById('test'))
+    // const  stu1=new Demo('tom',18)//
+    function demo(){}
+
+
+
+    /*
+    * 向对象里面添加 state到数据
+    *
+    * 状态不能直接更改 ，页面不会发生改变
+    * this.setState({isHot:!ishot}) 与原来的对象进行的是合并
+    *
+    *
+    * */
+
+</script>
+</body>
+</html>

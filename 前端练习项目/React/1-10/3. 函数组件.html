@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body lang="en">
+
+<div id="test">
+    <!--        引入js是需要顺序的-->
+
+
+</div>
+<!--    先引入核心库-->
+<script type="text/javascript" src="../js/react.development.js"></script>
+
+<!--    引入react-dom 用于支持react 操作dom-->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!--    引入babel 用于将jsx转换成js-->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!--此处一定要写babel-->
+<script type="text/babel">
+
+     //写函数组件化首字母需要大写 函数式组件
+     function Demo(){
+         //此处this是undefind 开启严格模式
+         return '<h2>我是函数</h2>'
+     }
+     //渲染组健
+     ReactDOM.render(<Demo></Demo>,VDOM,document.getElementById('test'))
+       类式组件
+</script>
+</body>
+</html>

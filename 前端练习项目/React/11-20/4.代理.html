@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+第一种方式
+<!-- 需要在package.jcon里面配置 pooxy：“www.baidu.com”  如果代理服务器有点  则不转发服务器 代理地址  -->
+第二种方法
+在src文件夹下建立setupProxy.js 要用cjs文件进行编写
+___________________________________________________
+const proxy=require('http-proxy-middleware')
+module.exports=function(app){
+    proxy('/apil',{
+        target:'http://localhost:5000',
+        changeOrigin:true，//尽量为true  控制服务器收到的响应头host字段的值
+        pathRewrite:{'^/apil':''}
+//在写的时候要带/apil1前缀
+
+})
+
+}
+
+
+___________________________________________________
+
+{a:{b:data}}取a里面的b然后重名为data
+</body>
+</html>

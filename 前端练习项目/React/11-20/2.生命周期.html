@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    ReactDom.unmountComponentAtNode(document.getElecmentByid('test'))卸载
+
+    componentDidMount(){}
+    是组件加载结束
+
+    组件将要卸载的时候调用
+    componentWillUnmount(){}
+
+    旧版本 调用顺序 挂载组件
+    constructor
+    componentWillMount
+    render
+    componentDidMount(){}
+
+    更新的过程
+    componentWillReceiveProps  第一次传递不会进行调用
+    shouldComponentUpdate   必须一直返回为true  如果返回为true才能继续走下去  控制更新阀门  setState()
+    componentWillUpdate     foreUpdate()是强制更新
+    render
+
+    componentDidupdate
+
+
+    新的生命周期
+    在新版本能用旧的沟子
+    新的沟子调用需要加UNSAFE
+    除了componentWillUnmount 与will相关的需要加UNSAFE
+    新版本与旧版本相比，废弃了3个沟子，启用了两个沟子
+    getDerivedStateFromProps  如果返回一个对象，则对数据进状态数据进行影响 传参可以获得到参数
+    任何值都取决于props
+    getSnapshotBeforeUpdate  在更新之前获取快照 结束前开始调用快照
+
+
+
+-->
+</body>
+</html>

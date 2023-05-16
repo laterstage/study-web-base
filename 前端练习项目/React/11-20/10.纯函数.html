@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    1，纯函数，不得改写参数数据，
+    2，不会产生任何副作用，例如网络请求，输入和输出设备
+    3.不能调用 Data.now()或者 Math.random()等不纯方法
+    redux实现数据共享
+    redux也有第三方扩展工具
+    需要安装一个库 redux-devtools
+引入包 a redux-devtools-extension
+createStore(allreducer,a())
+项目打包
+npm i serve -g
+react 扩展
+函数式的setState
+this.setState(()=>{
+    return {cont:99}
+    })
+如果新状态不依赖旧状态，使用对象方式，
+如果原状态依赖旧状态， 使用函数方法
+如果需要在setState()执行后获取最新数据 需要在第二个callback中读取
+
+lazyload懒加载 用的时候则加载，不用的时间则不加载
+引用lazy  Suspense
+const home=lazy(()={import(./Home)})
+    < Suspense fallback={<h1>加载当中</h1>}> 用他将路由进行包裹
+<ROUte></ROUte>
+</ Suspense>
+
+
+HOOKS
+const [xxx,setxxx]React.useState(0)
+setXXX() 让函数有setStata状态进行数据读取状态
+
+EffectHook
+如果不写第二个参数，检测所有人，。写的话检测 谁，写空数组，谁也不检测
+React.useEffect(()=>{},[])
+相当于didmonunt
+可以在函数组件中执行副作用函数，类似声明周期钩子
+
+RefHook
+USEref 可以在组件标签查找任意其他数据
+fragment  写标签，不解析到界面当中 可以写属性，空标签不能写属性
+
+组件中通信
+this.context.name
+祖业和祖孙通信
+在内部写static contexttype= mycontext
+案例
+const xxxcontext=React.createContext()
+<xxxcontext.provider .provider value="{数据}">
+
+</xxxcontext.provider>
+后代组件读取
+static contexttype-xxcontext
+this.context
+第二种方式
+<xxxContext.consumer>
+    {
+    value=>{要显示内容}
+    }
+</xxxContext.consumer>
+
+继承组件
+extends pureComponent
+自动编写shouldComponentUpdate()
+就是用用到父组件则更新父组件
+只有当组件的state数据发生改变才render()
+
+
+renderProps
+在父亲里面看不到儿子，儿子看不到父亲
+<a render="{(name)=><b name={name}/>}"/>
+在A组件要写
+this.props.render(name)  类似vue插槽作用
+
+ErrorBoundary
+项目打包 npm run build
+server build 允许
+将组件错误限制在一个区域内
+static getDerivedStateFromError(){
+子组件报错则调用的这个方法
+return {hasError:error} 在static hasError用于标识错误
+}
+
+componentDidCatch(){
+用于统计错误次数 发送给后台，只能处理声明周期里面的数
+组件间通信方式总结
+
+
+
+</body>
+</html>

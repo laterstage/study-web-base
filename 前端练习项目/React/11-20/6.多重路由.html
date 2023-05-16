@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+注册路由
+<switch>
+    所有路由放在这个地方，可以提高效率，匹配一次
+</switch>
+多层楼路由曾经导致，布局错乱的解决方法
+解决方法: <link ./> css文件的时候不用 ./的方式而是用/的方式
+第二种：%PUBLIC-LIRL%  将初始化地址换成 这个
+第三种采用HASH路由
+
+路由的匹配 默认采用的采用的是模糊匹配，只是根据第一层的地址进行匹配  然后 后面直接不管
+精确匹配 实现开始  <router exact="{true}">  进行打开精确匹配 一般默认不打开</router>
+重定向 R额direct引入包   一般当初次加载界面的时候上面的路由没有匹配则默认匹配 Rerirect 的去处路由
+
+建立的是 组件下的组件尽量放到组件里面 路哟匹配是有先后顺序 子组件写的时候带上他父亲的名字 /home/组件
+路由传递参数
+
+携带参数param传递参数
+采用传参{`home/age/${msgOBJ.id}`}
+注册路由需要，接受，<route path="age:id" compcoent="组件"> </route>
+存在match  下面的param参数存
+
+向路由传递，<link to="/home/age?id=${mgsObj.id}&id=${mgsObj.id}">
+接受seqrch 参数  this.search
+需要引入import qs  form querystring
+qs.stringify(obj)将结果进行传话对象
+const {it tile}=qs.parst(search)
+
+state参数
+ to='{{pathname:'/home/message/detail,state:{id:mesgobg}'}}}' 传参
+接受state参数
+const {}=this.props.location.state || {}
+
+路由开启replace={true}模式
+
+_______________________________________________________
+withRouter的使用 一般组件如何使用路由API
+export deafult withRouter(Header）
+
+</body>
+</html>
