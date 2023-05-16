@@ -1,0 +1,43 @@
+{
+  //** 代表任意目录* 代表任意文件 指定我们要编译的文件
+    "include": [
+      "./src/**/*"
+    ],
+  //表示不包括的目录
+    "exclude": [
+     ", ./src/**/*"
+    ],
+  //学的是里面有那些子选项
+    "compilerOptions": {
+      //target 用来指定ts被编译为ES的版本
+      "target": "es6",
+      //要制动要使用模块的规范
+      "module": "es6",
+      //库的意思，用来指定项目
+      "lib": ["dom"],
+      //表示编译好的代码输出的目录
+      "outDir": "./dist",
+      //将代码和成一个js文件
+      "outFile": "./dist/app.js",
+      "allowJS": false,
+      //检测js代码是否符号规范
+      "checkJS": false,
+      //是否移除注释
+      "removeComments": false,
+      //不生成编译后的文件
+      "noEmit": false,
+      //当有错误的时候不生成编译后的文件
+      "noEmitOnError": false,
+      //模式是否为严格模式
+      "alwaysStrict": false,
+      //当变量不指定类型  则默认是any
+      "noImplicitAny": false,
+      //不明确类型的一个false 检测一个this 的明确
+      "noImplicitThis": true,
+
+      //检查字符串的空值
+      "strictNullChecks": false,
+      //相当于是所有严格检查的总开关
+      "strict": false
+    }
+}
