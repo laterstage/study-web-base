@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(a,b){
+				console.log("a");
+			}
+			/**
+			 * 函数对象有两个法规范 call()  appley()
+			 *     -这两个方法需要需要函数对象调用， 上述的fun
+			 * 		调用call 和 appley （）都会调用执行fun.call(obj);
+			 * 		可以将一个对象指定为第一个参数 可以将一个对象指定为this 
+			 * 		call 可以将实参对象之后参数 依次传递
+			 * 		fun.call(b,4,5);是改变this 并传入参数
+			 * 		appley （b,[4,5]）需要将参数封装到数组当中统一传递
+			 * 	
+			 * 
+			 * */
+			 var b={};
+			 fun.apply(b,4,5);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

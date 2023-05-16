@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 创造一个构造函数 创建函数跟普通函数没有区别  习惯首字母大写
+			 * 
+			 * //构造函数和普通函数的区别就是调用方式不同
+			 * 
+			 * 1构造函数  立刻创建一个对象，并作为参数返回 立即创建一个新的对象
+			 * 2.逐行执行函数当中的代码
+			 * 3。将对象作为返回值返回
+			 * 4，用new 创建函数  则this 则代表函数
+			 *  使用同一对象创造 称位一类   
+			 * 		我们通过一个构造函数创建对象，称为是该类的实例
+			 * 		per 是Person 的实例
+			 * 		instanceof 检查这个对象是不是这个对象的实例 
+			 * 		如果是返回 true 失败返回false 
+			 * 	所有的对象都是Object 的后代
+			 * */
+			 //构造函数
+			 function Person(){
+				 this.name="我去";
+				 //this 代表当前对象
+				 return 1;
+			 }
+			 //当前调用方式为构造方法
+			 var per=new Person();
+			 //普通的函数  返回的是返回值
+			 var per1=Person();//返
+			 console.log(typeof per);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div  id="box"></div>
+		<button type="button" id="btn">点我一下</button>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				// alert("a");
+				/**
+				 * 通过js修改样式
+				 * 语法:元素.style.样式名字
+				 * 如果css含有- 号，在js是不合适的
+				 * 去掉-号然后把-后面变成大写
+				 * background-color==backgroundColor
+				 * 通过style 修改都是内联样式 同时内联样式很重要
+				 * 但是如果在样式中写了!impoortant 则此时样式有最高优先级 
+				 * 将会导致js 修改样式失败
+				 * 
+				 * 读取元素样式 返回值=元素.style.样式名字 （读取的都是内联样式）
+				 * 通过style 读取的是内联样式 
+				 * */
+				 
+				
+				 for(var i=0;i<=500;i++){
+					var temp=i+"px";
+					 box.style.width=temp;
+					 if(i==500){
+						 box.style.background="green";
+						 
+					 }
+				 }
+			}
+			
+		</script>
+	</body>
+</html>

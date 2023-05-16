@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 函数也能当参数
+			 * 返回值可以是类型也可以是对象
+			 * 也可以是一个函数
+			 * */
+			 function a(){
+				 function b(){
+					 //函数内容
+				 }
+				 return b;
+			 }
+			 //第一种写法
+			 var c=a();
+			 a();
+			 //此处相当于调用函数a 中b的内部的函数
+			 //第二种写法
+			 fun()()
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

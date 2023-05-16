@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+	</head>
+	<body>
+		<button  id="btn">我是一个按钮</button>
+		<script type="text/javascript">
+			/**
+			 * 用DOM管理网页  文档模型   用树来演示文档
+			 * 节点分为4类
+			 * 		文档节点  整个html
+			 * 		元素节点  html中的html标签
+			 * 		属性节点   元素属性
+			 * 		文本节点  html文档内容
+			 * 节点属性
+			 * 		     -nodeName  nodeType nodeValue 是每个节点都有的属性
+			 * 文档节点   #document   9       null
+			 * 元素节点    标签名      1       null
+			 * 属性节点    属性名      2       属性值
+			 * 文本节点    #text       3       文本内容
+			 * 通过值可以 分辨节点类型
+			 * 
+			 * document文档->html标签
+			 * 				:body
+			 * 				:head
+			 * */
+			/**
+			 * 浏览器提供根据节点 
+			 * 			可以在网页当中直接使用
+			 * document.getElementById("btn")  获取元素通过id
+			 * */
+			
+			 var btn=document.getElementById("btn");
+			 console.log(btn);
+			 //修改btn内部的html代码
+			 btn.innerHTML="不是一个东西";
+			
+			
+		</script>
+		
+	</body>
+</html>

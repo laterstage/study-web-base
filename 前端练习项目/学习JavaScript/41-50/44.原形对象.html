@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * prototype 原形
+			 * 
+			 * 我们每创建一个函数，解析器都会向函数单中添加一个属性prototype 原形对象
+			 * 当函数通过构造函数调用的时候 他所创建的对象都会有关属性指向原形对象（隐含属性）
+			 * 我们可以通过__proto__来访问属性
+			 * 
+			 * 原形对象是相同当于同一类实例都可以访问到当前对象  有点类似C语言的指针
+			 * 当访问对象一个属性或者方法 先再自身寻找 如果没有再去原形当中去寻找
+			 * Person.prototype.属性名字=“值或者函数”
+			 * 
+			 * 理解思路
+			 * 	第一步先创建一个构造函数 将外部传入的数据存入实例当中 也即是mc  的数据当中
+			 * 	第二部将一个程序
+			 * Person.prototype.fun=function(){
+				 console.log("大家好我是:"+this.name);
+			 } 通过这种的方式添加到原有的数据当中 则在执行m1.fun();
+				时候因为m1当中没有fun 函数 则返回源函数 去寻找 找到
+				this 就是调用fun的 对象  prototype是一个隐藏的属性 
+			 * */
+				 
+			 function Person(name,age,sex){
+				 this.name=name;
+				 this.age=age;
+				 this.sex=sex;
+				 
+			 }
+			 
+			 Person.prototype.fun=function(){
+				 console.log("大家好我是:"+this.name);
+			 }
+			
+			 var mc=new Person("孙悟空",18,"男");
+			  var mc1=new Person("猪八戒",18,"男");
+			  mc.hasOwnProperty()
+			console.log("a");
+			 mc.fun();
+			 mc1.fun();
+			 mc.fun();
+			 console.log("a");
+			 
+			// console.log(mc.__proto__);
+			 //console.log(mc.__proto__==Person.prototype);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

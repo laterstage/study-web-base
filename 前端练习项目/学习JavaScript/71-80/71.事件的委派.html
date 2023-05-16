@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button id="btn">添加超链接</button>
+		<ul id="ul">
+			<li><a href="javascript:;">超链接1</a></li>
+			<li><a href="javascript:;">超链接2</a></li>
+			<li><a href="javascript:;">超链接3</a></li>
+		</ul>
+		
+		<script type="text/javascript">
+			/**
+			 * 为每一个超链接绑定响应时间
+			 * 点击按钮添加超链接
+			 * */
+			 var ul=document.getElementById("ul");
+			 var btn=document.getElementById("btn");
+			 btn.onclick=function(){
+				 //创建一个超链接
+				 var li=document.createElement("li");
+				 li.innerHTML='<a href="javascript:;">超链接3</a>';
+				 /**
+				  * 后加的超链接是没有事件的 
+				  * 这些操作只能为已有操作 
+				  * 新家的需要重新绑定
+				  * */
+				 ul.appendChild(li);
+			 }
+			 var allA= document.getElementsByTagName("a");
+			 /**
+			  * 如果需要为心新加的创造事件则  绑定它的父亲元素  并用冒泡机制*/
+			 ul.onclick=function(event){
+				 event=event=event || window.event;
+				 /**
+				  * 表示触发事件对象
+				  * */
+				  if(event.target.className==link){
+					  //这里面是需要执行的代码
+				  }
+			 }
+			 // for(var i=0;i<allA.length;i++){
+				//  allA[i].onclick=function(){
+					 
+				// 	 alert("我是单击后的相应"+i);
+				// 	 ul.appendChild()
+				//  }
+			// }
+			
+			/**
+			 * 只绑定一次
+			 * */
+		</script>
+	</body>
+</html>

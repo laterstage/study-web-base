@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		 <script type="text/javascript">
+				
+				/**
+				 * 多余的实参不会被赋值
+				 * 如果实参少于形参，则没有对应的实参的形参 则是undefined
+				 * 实参可以是任意数据类型*/
+		 	function sum(a,b){
+				a=a+b;
+				return a;
+			}
+			var a=sum(4,5);
+			console.log(a);
+		 </script>
+	</head>
+	<body>
+	</body>
+</html>

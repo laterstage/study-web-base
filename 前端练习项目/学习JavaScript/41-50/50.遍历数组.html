@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * 一般采用for循环遍历数组
+			 * js还提供一种方法
+			 * forEach()   //这个方法只支持iE8以上
+			 *    
+			 * 
+			 * 这种函数由我们创建函数  由浏览器调用的函数称为回调函数
+			 * 
+			 * 数组当中有几个就执行计次  每次以实参的形式传递
+			 * -浏览器会在回调函数传递三个参数
+			 * 第一个参数  第一个当前正在遍历的值
+			 * 第二个参数  当前正在遍历元素的索引
+			 * 第三个参数  是我们正在遍历的数组
+			 * */
+			 
+			 function fun(a){
+				 console.log(a);
+			 }
+			 var arr=[1,2,3,4,5,6,7,8,10];
+			 arr.forEach(fun);
+			 
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

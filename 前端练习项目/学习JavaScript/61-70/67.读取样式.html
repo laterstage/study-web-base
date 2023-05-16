@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div  id="box"></div>
+		<button type="button" id="btn">点我一下</button>
+		<script type="text/javascript">
+			var box=document.getElementById("box");
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				/**
+				 * 获取CSS当中一个样式
+				 * 语法：元素.currenStyle.样式名字
+				 * 它可以用来读取当前元素正在显示的样式  如果没有样式则执行默认值
+				 * currenStyle 只有ie支持 其他浏览器不支持
+				 * 
+				 * 在其他浏览器中可以使用
+				 * getComputeStyle()这个方法获取当前元素样式
+				 * 这个方式是 windows下的方法 ie8 下 不支持
+				 * 需要两个参数
+				 * 		第一个参数:要获取样式的元素
+				 *		第二个参数：可以传递一个伪元素 一般都传null 
+				 * 		改方法返回的是一个对象
+				 *  var obj=window.getComputedStyle(box,null);
+				 alert(obj.width);  当没有设置任何样式 则获取真实的值 而不是样式
+				 *
+				 * 通过currentStyle 和getComputedStyle()读取到的数据
+				 * 				只能看不能动 修改   难受不  如如果修改必须同style
+				 * */
+				 var obj=window.getComputedStyle(box,null);
+				 alert(obj.width);
+			}
+			/**
+			 * 为了兼容ie8 和正常的浏览器
+			 * 需要自己写一个函数
+			 * 参数 
+			 * 		obj 获取样式的一个元素
+			 * 		name 要获取的样式名字
+			 * 
+			 * 		
+			 * */
+			 function getstyle(obj,name){
+			
+		
+				 if(windows.getComputedStyle){
+					 //正常浏览器方式  具有上面的方法
+					 return  getComputedStyle(obj,null)[name];
+				 }else{
+					 //IE8的方式
+					  return obj.currentStyle[name];
+				 }
+			 }
+		</script>
+	</body>
+</html>
