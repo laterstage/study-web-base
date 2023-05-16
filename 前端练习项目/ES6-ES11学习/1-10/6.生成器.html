@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//生成器是一种特殊的函数、
+			//进行的是异步编程  函数代码的  一个next执行一段 next  方法可以传入形参 作为第二个yield 的返回结果
+			function *  gen(){
+				console.log("fdsf");
+			let a=	yield '一只没有耳朵';
+			console.log(a);
+				//第二端
+				console.log("fdsf");
+				yield '一只没有';
+				
+			}
+			let con=gen();
+		//	如何调用
+			con.next();
+			con.next("fdfsd");//上一个yield的返回结果
+			
+			
+			//promise 异步编程的解决方案
+			const p=new Promise(function(resolve,reject){
+				let data='调用数据';
+				resolve(data);//对象状态就会变为车工  只要他执行 就会调用p.then 第一个回调函数的方法
+				
+				let err='失败';
+				reject(err);//调用此方法就会调用，第二个方法
+			})
+			p.then(function(value){
+				
+			},function(reason){
+				
+			})
+			//then 函数的回调结果是由 上面调用的结果来绝定的 由回调函数的结果来绝定
+			//非promise 类型的属性 状态为成功 返回值的对象返回成功
+			/**
+			 * 抛出错误
+			 * throw new Error('出错了')
+			 * */
+			 
+			 /**
+			  * Promise  catch的方法
+			  * 
+			  * */
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		af
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>模板字符串</title>
+		<script type="text/javascript">
+			let str=`我也是`;
+			/**$
+			 * 内容当中可以直接出现换行符号
+			 * 3.变量拼接
+			 * 
+			 * */
+			 let lo=`刘翔`;
+			 let ao=`${lo}是我辛总很搞笑的一个演员`;//必须使用$符号
+			 
+			 
+			 //简化对象写法
+			 //ES6允许大括号里面直接写入变量和函数，作为对象的属性和方法
+			 //这样书写更加简介
+			 let name='尚硅谷';
+			 let change=function(){
+				 console.log('我们可以改变你们');
+			 }
+			 conset school={
+				 name,
+				 change
+				improve(){
+					console.log("fdsf");
+				}
+			 }
+			 //上面是简化之后的，下面是没有简化的
+			 conset school1={
+			 				 name:name,
+			 				 change:change,
+							 improve:function(){
+							 	console.log("fdsf");
+							 }
+			 }
+			 
+			 //箭头函数
+			 //ES6允许使用 件头=>定义函数
+			 //声明一个函数
+			 /**
+			  * let fn=function(){
+				  
+			  }
+			  * */
+			 let fn=(a,b)=>{
+				 return a+b;
+			 }
+			 /***
+			 件头函数声明的特性
+			 1.this 是静态的，this始终指向，函数声明作用域下，的this的数值
+			 2.不能作为构造函数实例化对象
+			 例子：
+			 let person=(neame,age)=>{
+				 this.name=name;
+				 this.age=age
+			 }当前的方法不是很行
+			 let me=new person('xiao',30);
+			 3.不能使用arguments 变量
+			 let fn=()=>{
+				 console.log(arguments);
+				 //当前的arguments的变量不能使用
+				 
+			 }
+			 4.件头函数的简写  
+			 当形参当且仅当只有一个可以是省略
+			 let add=n=>{
+				 retur n+n;
+			 }
+			 5.省略花括号，当代码体只有一条语句时候可以省略花括号 此时return 也要省略 
+			 件头函数不适合与this 有关的使用
+			 let pow=n=>return n+n;
+			 */
+			 
+			 /**
+			  * ES6 允许给函数的参数赋初始数值
+			  * 1.，形参初始数值，具有默认参数，一般位置要靠后
+			  * 与解构赋值结合
+			  * */
+			  function add(a,b,c=10){
+				  
+			  }
+			  // function connect(options){
+				 //  let name=options.name;
+			  // }
+			  // connct({name="name"})
+			  // function connct ({})
+			  // //与下面的等价
+			  /*
+			  function connect({name,password='123'}){
+				  
+			  }
+			  */
+			  
+			 
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

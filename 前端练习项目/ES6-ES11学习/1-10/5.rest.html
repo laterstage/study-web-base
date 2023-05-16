@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/**
+			 * rest 参数
+			 * 这样就是一个数组  rest 一定要放到参数的最后
+			 * */
+			 function date(...args){
+				 console.log(ages);
+			 }
+			 date('阿娇'，'柏芝')
+			 /**
+			  * 声明一个数组
+			  * */
+			//将数组转换成三个参数
+			const tfboys=['A','B','C'];
+			function chunwan(){
+				console.log(arguments);
+			}
+			chunwan(...tfboys);
+			
+			//数组的合并
+			const kuaizi=['王','肖战'];
+			const fenghua=['曾毅','菱花'];
+			const zzz=kuaizi.concat(fenghua);
+			//扩展运算符
+			const kkk=[...kuaizi,...fenghua];//
+			
+			//2数组的克隆
+			const kelong=[...kuaizi];//实现克隆
+			
+			//3将伪数组转换成真正的数组
+			const divs=document.querySelectorAll('div');
+			const divArr=[...divs];
+			
+			
+			
+			//Symbol 类似字符串，是唯一 不能参加其他参数运算 不能使用 for in进行循环遍历  但可以使用R而非了传统。ownKeysl来获取
+			//键名
+			
+			//常见symbol
+			let s=Symbol();
+			//第二钟创建方式
+			let s2=Symbol("不易样")
+			//第三种创建方法
+			let s4=Symbol.for('一样的');//他是一个对象  当前创建两个是一样的
+			//是给对象添加属性独一无二    给对象添加Symbol('属性方式')
+			let youxi={
+					
+				[Symbol('sal')](){
+					console.log('我可以发言');
+				}
+			}
+			
+			/**
+			 * 内置的Symbol
+			 * 数值
+			 * */
+			class Person{
+				static [Symbol.hasInstance](){
+					console.log("我被用来检测类型")
+				}
+			}
+			console.log(0 instanceof Person);//在特定的地方去执行
+			
+			
+			//迭代器
+			/**
+			 * iterator 是对象里面的一个接口
+			 * */
+			const xiyou=['a','aa'];
+			//可以使用 for of 遍历
+			for(let v of xiyou){
+				console.log(v);
+			}
+			//在对象里面使用
+			const banjia={
+				name:'终极1班',
+				stus:[
+					
+					'S',
+					'B'
+				],
+				[Symbol.iterator](){
+					let index=0;
+					let _this=this;
+					return [
+						next:function(){
+							if(index<this.stus.length){
+								const result={value:_this.stus[index],done:false};
+								//下标自增
+								index++;
+								return result;
+							}else{
+								return{value:undefined,done:true};
+							}
+							
+						}
+					];
+				}
+			}
+			/**
+			 * 工作原理
+			 * 1 创建一个指针对象，指向当前数据的起始位置
+			 * 2.第一次调用对象的next 方法 ，指针自动指向下一个成员
+			 * 3.接下来不断调用next 方法 指针一直向后移动 直到最后一个成员、
+			 * 4.需要调用next方法返回一个包含value 和done的属性对象
+			 * 
+			 * 
+			 * 
+			 * */
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

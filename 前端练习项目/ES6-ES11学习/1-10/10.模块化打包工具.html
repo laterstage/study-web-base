@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//安装的是局部的话  则调用命令  在 dos 窗口 
+			//参数的命令  npx babel src/js -d dist/js --presets=babel-preset-env
+			//2. 打包 npx browserify dist/js/app.js  -o  dist/bundle.js
+			//-o是输出到那个位置   
+			console.log(shuzu.includes('goog'))
+			//ESE7 特性   判断数组是否包括  上面的 数组信息 
+			//判断数组是否包括  
+			//**  是代表幂运算  2** 次幂
+			//ECMASriot8的新特性
+			
+			async function fn(){
+				return '尚硅谷';
+				//返回的不是一个 promise 类型的对象
+				//抛出错误，返回的是一个失败的promise
+				// 返回的结果是一个promise 对象
+				//resolve('成功数值')  失败的数值 reject('失败的错误')  也可以用result.then()
+				
+				
+			}
+			const result=fn();
+			console.log(result);
+			
+			// await 表达式必须写在 asyns 函数当中
+			//await 右侧的表达式一般为promise 对象
+			// await  返回的式promise 成功的值
+			//await 的promise 失败了 就会抛出异常，需要通过try catch 捕获处理
+			const p=new Promise((resolve,reject)=>{
+				resolve("成功的值");
+				reject("失败了");
+				
+			});
+			
+			async function test(){
+			
+					let result=await p;
+					console.log(result);
+					
+					try{
+						let result1=await p;//捕获失败内容
+						console.log(result1);
+					}catch(e){
+						//TODO handle the exception
+						console.log(e);
+					}
+			}
+			test();
+			
+		//es8对象扩展
+		/**
+		 * 获取对象所有键值
+		 * Object.keys(school)
+		 * 获取对象里面所有的值
+		 * Object.log(Object.valuse(school))
+		 * 创建map
+		 * const m=new Map(Object.entries(school))
+		 * console.log(m.get('键值对'));
+		 * Object.getOwnPropertyDescriptor('获取对象属性描述')
+		 *
+		  * ES9 扩展运算符号
+		 * */
+			 function aba(host,..abs){
+				 //传参的时候前一个按照，参数 写入 ，多余或者超过则将多个写入一个参数 
+				 //定义对象 时候  ，将对象传参 每一个都使用...名字 则将键值对和都传入
+			 }
+			 
+			//正则扩展名字-命名捕获分组  ?<url>进行分组 url是名字可变的 
+			//正向断言 ?=值 判断匹配的数据的值是否与其相等
+			
+			/**
+			 * 正则表达式dot ALL断言
+			 * /s是模式修正符号 ，可以匹配任意字符
+			 * */
+			
+			
+			//对象的扩展  
+			const result =Object.fromEntries([
+				[]
+			])
+			
+			//字符串扩展  trimStart 与 trimEnd 分别代表清除字符串  左侧字符 和右侧字符 trimEnd();//清除尾部空白
+			
+			
+			//数值的扩展  flat 与 flatMap   将多为数值转换成低维的数组  
+			//Symbol.prototype.description 是表示对象描述
+			/**
+			 * 私有属性
+			 * 
+			 * 
+			 * */
+			class Persiong{
+				#age;
+			}
+			
+			/**
+			 * Promise.allSettled([P1,P2]);返回的结果总是成功的  all根据里面的内容绝定是否失败  返回的是
+			 * 那个失败的结果就返回那个失败的结果
+			 * 
+			 * 用于得到正常批量匹配的结果
+			 * String.prototype.mathchALL('正则字符串')
+			 * 
+			 * */
+		
+		/**
+		 * 可选链操作符
+		 *   ?.
+		 * 
+		 * 
+		 * */
+		 function ma(config){
+			 const dbH=config?.db
+			 //如果前面有则读取后面的属性
+		 }
+		 //动态import ('./j.js')
+		 /**
+		  * BigInt()大整形 必须是同类型相计算
+		  * globalThis 始终指向全局定向
+		  * 
+		  * */
+		 
+		
+		
+		
+		
+		
+		
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

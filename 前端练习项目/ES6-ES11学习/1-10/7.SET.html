@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//声明一个set 
+			let s=new Set();
+			let s2=new Set(['大事儿','小事儿']);
+			console.log(s2.size);//打印出来的是长度
+			//添加新的元素
+			s2.add('新添加的成员');
+			s2.delete('我要删除新添加的成员');
+			s2.has('A');//检测里面是否含有A 这个字符串
+			s2.clear();//表示清空的一个结果
+			
+			//数组去重
+			let arr=[1,2,3,4,5,6,7,8,1];
+			let result=[...new Set (arr)];
+			//2 交集
+			let arr=[2,3];
+			//先去重， 然后再 进行 交集
+			let result=[...new Set (arr).filter(item=>{
+				if(sa.has(item)){
+					return true;
+				}else{
+					return false;
+				}
+			})];
+			
+			//交集
+			let union=[...new Set([...arr,...arr2])];
+			//差集
+			let diff=[...new Set(arr)].fill(item=>new Set (arr2).has(item));
+			
+			
+			//Map 不限制与字符串
+			let m=new Map();
+			m.set('name','尚硅谷')；
+			console.log(m);
+			
+			删除键值对
+			m.delete('name');
+			//获取对
+			console.log(m.get('change'));
+			
+			
+			//ES6  class构造方法来实现
+			class Phone{
+				//构造方法名字不能修改
+				constructor(arg) {
+				    console.log(arg);
+				}
+				call(){
+					console.log("我可以打电话");
+				}
+			}
+			let oneplus=new Phone("1+",1999);
+			
+			//class 静态成员
+			class test{
+				//静态方法
+				static name='赵本山';
+				
+			}
+			let t=new test();
+			console.log(t.name);是查看不到name 这个字符串的
+			console.log(test.name);是可以查看到字符串的
+			
+			//继承类似java里面的继承函数
+			class phone {
+				//构造方法
+				constructor (brand,price){
+					this.brand=brand;
+					this.price=price;
+					
+					
+				}
+				//声明父类成员属性
+				call(){
+					console.log("我可以打电话");
+				}
+			}
+			class SmartPhone extends phone{
+				//子类的构造方法
+				
+				constructor (brand,price,color,size){
+					
+					//调用父类初始化
+					super(brand,price);
+					
+					this.color=size;
+					this.size=size;
+					
+					
+				}
+			}
+			
+			//子类对父类进行重写
+			//在原有的功能进行重写 在子类call()不能调用父类的super 的方法的  在子类 写一个与父类同名的方法
+			
+			
+			//getter 和setter 设置
+			
+			class phone{
+				get price(){
+					console.log("价格被读取了")
+					return 5;//返回的是价格
+				}
+				//set 是必须要有参数的
+				set price(newprice){
+					console.log("价格被修改了")
+				}
+			}
+			
+			let s =new phone();
+			console.log(s.price);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
