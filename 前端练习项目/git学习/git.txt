@@ -1,0 +1,75 @@
+git config -l 进行git配置查看
+所有配置文件都保存在本地
+git config --system --list 查看系统配置
+
+git config --global --list 查看当前用户配置
+
+GIT\etc\gitconfig GIT安装目录下的 gitconfig -system系统级别
+C:users\administrator\.giconfig 只适合登录用户配置 -global全局
+这里直接编辑配置文件，通过命令会影响这里
+
+设置用户名字和密码
+git config --global user.nam "名称"
+git config --global user emai 2473755.qq.com 邮箱
+
+
+git push 提高远程服务器
+git commit  提到历史版本
+git add files 添加临时文件
+
+获取
+git pull
+
+git reset
+
+git checkout
+
+workspace 工作区 就是平时放代码的部分
+
+项目的本地目录 kuaing-community
+暂存器 index/stage用于存临时改动的
+repository 仓库本地仓库 就是安全存储数据的地方  HEAD文件夹一般是隐藏的 ref:refs/head/master一般指定是当前节点 主分支
+ 在.git文件夹目录下 有一个HEAD 和一个stage
+
+
+git init 初始化
+git status 看是否有文件被跟踪
+git add .将数据提交在暂存区 是所有文件
+git commit -m 将暂存区提交到本地仓库
+
+.gitignore是配置忽略那些文件提交到，仓库
+*.txt忽略所有
+!lib.txt lib.txt除外
+/temp  忽略项目根目录下的TODO文件不包括其他目录temp
+build/ 忽略build/文件夹下的所有文件
+doc/*.txt 忽略doc/notes.txt但不包括 doc/server/arch.txt
+
+
+使用云服务
+gitee
+
+设置SSH公钥 实现面密码登录
+进去C:\users\administrator\.ssh
+生成公钥
+ssh-keygen -t rsa 生成产生对应文件 将public 复制上去
+绑定之后要用 git clone 将远程获取到本地
+
+
+新建项目，将项目与远程进行绑定  将.git 文件复制到自己写的项目当中
+git commit -m "new file "更新的时候添加描述
+
+gitee存仓库
+
+
+git branch -r 查看分支
+git branch dev   新建分支
+多个分支并行执行，代码不冲突
+git checkout -b 分支 船舰一个分支并切换到创建分支
+git merge  合并分支
+git branch -d 分支 删除分支
+
+删除远程分支
+git push origin --delete 分支
+git branch -dr  remote/分支
+
+
